@@ -15,8 +15,20 @@ dependencies {
 
     // JUnit для тестов
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+
+    // Зависимость для стандартных тестов в Kotlin
+    testImplementation(kotlin("test"))
+
+    // Selenide для работы с браузером
+    testImplementation("com.codeborne:selenide:6.4.0")
+
+    // JUnit для запуска тестов
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(17)  // Устанавливаем JVM версию 17
 }
